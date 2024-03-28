@@ -19,6 +19,8 @@ while True:
     #Creating Rectangle around face
     for(x, y, w, h) in faces:
         cv2.rectangle(img, (x, y), (x+w, y+h), (0, 0, 250), 2)
+        # le x = bord gauche , w = largeur -> exprime la distance, donc centre = (x + w / 2, y + h / 2) 
+        cv2.putText(img,str(x+w/2)+" - "+str(y+h/2),(90,90),cv2.FONT_HERSHEY_DUPLEX, 0.9, (147, 58, 31), 1)
 
     #Displaying the image 
     cv2.imshow('Detected Face Image',  img)
